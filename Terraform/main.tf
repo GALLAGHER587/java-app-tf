@@ -72,7 +72,7 @@ data "aws_ami" "latest-amazon-linux-image" {
     owners = ["amazon"]
     filter {
         name = "name"
-        values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+        values = ["amzn2-ami-hvm-*-x86_64-gp2"] 
     }
     filter {
         name = "virtualization-type"
@@ -89,7 +89,7 @@ resource "aws_instance" "myapp-server" {
     availability_zone = var.avail_zone
 
     associate_public_ip_address = true
-    key_name = "ethan-key"
+    key_name = "techtorialb2"
     user_data = file("entry-script.sh")
 
     tags = {
